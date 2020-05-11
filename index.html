@@ -1,1 +1,93 @@
 
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Distribution des croquettes</h1>
+    <form>
+        <label for="animal">Choisissez votre animal</label><br />
+        <select name="animal" id="animal">
+           <option value="1">chat</option>
+           <option value="2">chien</option>
+       </select> <br />
+       <label for="poids">Quel est sont poids</label><br />
+       <select name="poids" id="poids">
+        <option value="1000">1kg</option>
+        <option value="2000">2kg</option>
+        <option value="3000">3kg</option>
+        <option value="4000">4kg</option>
+        <option value="5000">5kg</option>
+        <option value="6000">6kg</option>
+        <option value="7000">7kg</option>
+        <option value="8000">8kg</option>
+        <option value="9000">9kg</option>
+        <option value="10000">10kg</option>
+        <option value="11000">11kg</option>
+        <option value="12000">12kg</option>
+        <option value="13000">13kg</option>
+        <option value="14000">14kg</option>
+        <option value="15000">15kg</option>
+        <option value="16000">16kg</option>
+        <option value="17000">17kg</option>
+        <option value="18000">18kg</option>
+        <option value="19000">19kg</option>
+        <option value="20000">20kg</option>
+        <option value="21000">21kg</option>
+        <option value="22000">22kg</option>
+        <option value="23000">23kg</option>
+        <option value="24000">24kg</option>
+        <option value="25000">25kg</option>
+        <option value="26000">26kg</option>
+        <option value="27000">27kg</option>
+        <option value="28000">28kg</option>
+        <option value="29000">29kg</option>
+        <option value="30000">30kg</option>  
+        <option value="31000">31kg</option>
+        <option value="32000">32kg</option>
+        <option value="33000">33kg</option>
+        <option value="34000">34kg</option>
+        <option value="35000">35kg</option>
+        <option value="36000">36kg</option>
+        <option value="37000">37kg</option>
+        <option value="38000">38kg</option>
+        <option value="39000">39kg</option>
+        <option value="40000">40kg</option>
+        <option value="41000">41kg</option>
+        <option value="42000">42kg</option>
+        <option value="43000">43kg</option>
+        <option value="44000">44kg</option>
+        <option value="45000">45kg</option>
+        <option value="46000">46kg</option>
+        <option value="47000">47kg</option>
+        <option value="48000">48kg</option>
+        <option value="49000">49kg</option>
+        <option value="50000">50kg</option>
+        </select>
+        <input onclick="resultat()" type="button" value="Envoyer"/>
+    </form>
+    <div id="resultat"></div>
+        <script>
+
+function resultat()
+{
+    num1 = document.getElementById("animal").value;
+    num2 = document.getElementById("poids").value;
+    document.getElementById("resultat").innerHTML =("<p> le poid de l'animal + le type de l'animal a donné comme résultat : " +num2/100*num1+" grammes<br /></p>");            
+
+}
+        </script>
+    </body>
+</html>
