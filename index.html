@@ -23,7 +23,7 @@
     <form>
         <span>Choisissez votr animal : </span>
         <select v-model="animal" id="animal">
-           <option value="1">chat</option>
+           <option value="1">chat<img :src="option.cardImage"></option>
            <option value="2">chien</option>
        </select>
        <span>Quel est sont poids : </span>
@@ -31,7 +31,7 @@
         <option v-for="i in 50" :value="i * 1000">{{i + "kg"}}</option>
         </select>
         <div id="bouton">
-        <button @click.prevent="resultat()">Envoyer</button>
+        <button class="liens" @click.prevent="resultat()">Envoyer<span></span><span></span><span></span><span></span></button>
         </div>
     </form>
     <div id="resultat">
@@ -46,7 +46,8 @@ var app = new Vue({
   data: {
     animal: '1',
     poids: '1000',
-    quantite_croquette: 0
+    quantite_croquette: 0,
+    cardImage: "http://www.liselec.fr/wp-content/uploads/2016/05/shutterstock_294737312-470x500.jpg"
     },
     
     methods: {

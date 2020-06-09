@@ -1,3 +1,9 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
 h1
 {
     text-align: center;
@@ -58,4 +64,94 @@ input:active
     text-align: center;
     margin-top: 50px;
     padding: 10px;
+}
+
+.liens
+{
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    box-shadow: 0 0 20px lightblue;
+    background: rgba(77, 64, 253, 0.25);
+    padding: 10px 30px 10px 30px;
+    margin: 0 15px 0 15px;
+    transition: 0.2s;
+    overflow: hidden;
+}
+
+.liens:hover
+{
+    color: white;
+    box-shadow: 0 0 10px rgba(77, 64, 253, 1), 0 0 40px rgba(77, 64, 253, 1), 0 0 60px rgba(77, 64, 253, 1);
+    background: rgba(77, 64, 253, 1);
+    transition-delay: 0.5s;
+}
+
+.liens span
+{
+    position: absolute;
+    display: block;
+}
+
+.liens span:nth-child(1)
+{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,rgba(77, 64, 253, 1));
+}
+
+.liens:hover span:nth-child(1)
+{
+    left: 100%;
+    transition: 0.5s;
+}
+
+.liens span:nth-child(2)
+{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,rgba(77, 64, 253, 1));
+}
+
+.liens:hover span:nth-child(2)
+{
+    top: 100%;
+    transition: 0.5s;
+    transition-delay: 0.125s;
+}
+
+.liens span:nth-child(3)
+{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,rgba(77, 64, 253, 1));
+}
+
+.liens:hover span:nth-child(3)
+{
+    right: 100%;
+    transition: 0.5s;
+    transition-delay: 0.250s;
+}
+
+.liens span:nth-child(4)
+{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,rgba(77, 64, 253, 1));
+}
+
+.liens:hover span:nth-child(4)
+{
+    bottom: 100%;
+    transition: 0.5s;
+    transition-delay: 0.375s;
 }
