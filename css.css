@@ -1,1 +1,60 @@
+h1
+{
+    text-align: center;
+    background-color: lightblue;
+    padding: 10px;
+}
 
+form
+{
+    margin: auto;
+    width: 50%;
+    padding: 30px;
+    border-radius: 100px;
+    border: lightgray solid 3px;
+    text-align: center;
+}
+
+select
+{
+    box-shadow: lightgrey 5px 5px 5px;
+    border: gray solid 2px;
+    border-radius: 5px;
+    padding: 5px 30px 5px 30px;
+}
+
+#animal
+{
+    margin: 0px 30px 20px 0;
+}
+
+#poids
+{
+    margin: 0px 0px 20px 0px;
+}
+
+#bouton
+{
+    margin-top: 50px;
+}
+
+input
+{
+    box-shadow: lightgrey 5px 5px 5px;
+    background-color: lightgrey;
+    border: grey solid 2px;
+    border-radius: 5px;
+    padding: 5px 30px 5px 30px;
+}
+
+input:active
+{
+    background-color: gainsboro;
+    transform: translate(3%,3%);
+}
+
+#resultat
+{
+    margin-top: 50px;
+    padding: 10px;
+}

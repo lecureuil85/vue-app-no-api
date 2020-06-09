@@ -10,21 +10,23 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css.css">
     </head>
+    <header>
+        <h1>Distribution des croquettes</h1>
+    </header>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Distribution des croquettes</h1>
     <form>
-        <label for="animal">Choisissez votre animal</label><br />
+        <span>Choisissez votr animal : </span>
         <select name="animal" id="animal">
            <option value="1">chat</option>
            <option value="2">chien</option>
-       </select> <br />
-       <label for="poids">Quel est sont poids</label><br />
-       <select name="poids" id="poids">
+       </select>
+       <span>Quel est sont poids : </span>
+       <select v-model="selected" id="poids">
         <option value="1000">1kg</option>
         <option value="2000">2kg</option>
         <option value="3000">3kg</option>
@@ -76,16 +78,29 @@
         <option value="49000">49kg</option>
         <option value="50000">50kg</option>
         </select>
-        <input onclick="resultat()" type="button" value="Envoyer"/>
+        <div id="bouton">
+        <button v-on:click.prevent="resultat" type="checkbox" v-model="toggle" true-value="yes" false-value="no"/>Envoyer</button>
+        </div>
     </form>
     <div id="resultat"></div>
-        <script>
+        <script type="text/javascript">
+
+var animal = new Vue1({
+  el: '',
+  data: {
+    selected: 'chien'
+    }});
+var poids = new Vue2({
+  el: '',
+  data: {
+    selected: '3kg'
+    }});
 
 function resultat()
 {
-    num1 = document.getElementById("animal").value;
-    num2 = document.getElementById("poids").value;
-    document.getElementById("resultat").innerHTML =("<p> le poid de l'animal + le type de l'animal a donné comme résultat : " +num2/100*num1+" grammes<br /></p>");            
+    num1 =  this.$refs.animal.value;
+    num2 = this.$refs.poids.value;
+    this.$refs.resultat.innerText =("<p> le poid de l'animal + le type de l'animal a donné comme résultat : " +num2/100*num1+" grammes de croquettes.<br /></p>");            
 
 }
         </script>
