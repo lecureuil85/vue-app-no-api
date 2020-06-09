@@ -19,16 +19,17 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+    <div id="app">
     <form>
         <span>Choisissez votr animal : </span>
-        <select name="animal" id="animal">
+        <select v-model="animal" id="animal">
            <option value="1">chat</option>
            <option value="2">chien</option>
        </select>
        <span>Quel est sont poids : </span>
-       <select v-model="selected" id="poids">
-        <option value="1000">1kg</option>
-        <option value="2000">2kg</option>
+       <select v-model="poids" id="poids">
+        <option v-for="i in 50" :value="i * 1000">{{i + "kg"}}</option>
+        <!-- <option value="2000">2kg</option>
         <option value="3000">3kg</option>
         <option value="4000">4kg</option>
         <option value="5000">5kg</option>
@@ -76,33 +77,33 @@
         <option value="47000">47kg</option>
         <option value="48000">48kg</option>
         <option value="49000">49kg</option>
-        <option value="50000">50kg</option>
+        <option value="50000">50kg</option> -->
         </select>
         <div id="bouton">
-        <button v-on:click.prevent="resultat" type="checkbox" v-model="toggle" true-value="yes" false-value="no"/>Envoyer</button>
+        <button @click.prevent="resultat()">Envoyer</button>
         </div>
     </form>
-    <div id="resultat"></div>
+    <div id="resultat">
+        <p>le poids de l'animal + le type de l'animal a donné comme résultat : {{quantite_croquette}} grammes de croquettes.<br /></p>
+    </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script type="text/javascript">
 
-var animal = new Vue1({
-  el: '',
+var app = new Vue({
+  el: '#app',
   data: {
-    selected: 'chien'
-    }});
-var poids = new Vue2({
-  el: '',
-  data: {
-    selected: '3kg'
-    }});
-
-function resultat()
-{
-    num1 =  this.$refs.animal.value;
-    num2 = this.$refs.poids.value;
-    this.$refs.resultat.innerText =("<p> le poid de l'animal + le type de l'animal a donné comme résultat : " +num2/100*num1+" grammes de croquettes.<br /></p>");            
-
-}
+    animal: '1',
+    poids: '1000',
+    quantite_croquette: 0
+    },
+    
+    methods: {
+        resultat: function(){
+           this.quantite_croquette = this.poids/100*this.animal
+        }
+    }
+});
         </script>
     </body>
 </html>
